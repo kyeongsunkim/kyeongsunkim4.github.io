@@ -2,36 +2,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto-Bookdown",
+    "title": "Research-Bookdown",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "Summary\n\nTable of summary\n\n\nCol1\nCol2\nCol3\n\n\n\n\n1\n2\nd\n\n\nz\n3\nf\n\n\nd\ng"
   },
   {
     "objectID": "01_practice_01.html",
     "href": "01_practice_01.html",
-    "title": "1  Practice",
+    "title": "Data Visualization",
     "section": "",
-    "text": "Code\n%time print('hello world!'\n\n\nhello world!\nCPU times: total: 0 ns\nWall time: 0 ns"
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "2  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "%time print('hello world!')\n\nhello world!\nCPU times: total: 0 ns\nWall time: 0 ns"
   }
 ]

@@ -1,5 +1,9 @@
-# Preface {.unnumbered}
+# Summary {.unnumbered}
 
-This is a Quarto book.
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 1    | 2    | d    |
+| z    | 3    | f    |
+| d    | g    |      |
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+: Table of summary

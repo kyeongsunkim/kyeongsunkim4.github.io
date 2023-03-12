@@ -3,17 +3,12 @@ project:
   output-dir: docs
   
 book:
-  title: "Quarto-Bookdown"
-  author: "Jane Doe"
+  title: "Research-Bookdown"
+  author: "Kyeong Sun Kim"
   date: "2023. 3. 12."
   chapters:
     - index.qmd
     - 01_practice_01.ipynb
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
 
 format:
   html:
