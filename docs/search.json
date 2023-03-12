@@ -9,9 +9,9 @@
   {
     "objectID": "01_practice_01.html",
     "href": "01_practice_01.html",
-    "title": "Quarto-Bookdown",
+    "title": "1  Practice",
     "section": "",
-    "text": "import numpy as np\nprint(np.array([1,2,3]))\n\n[1 2 3]"
+    "text": "Code\n%time print('hello world!'\n\n\nhello world!\nCPU times: total: 0 ns\nWall time: 0 ns"
   },
   {
     "objectID": "intro.html",
