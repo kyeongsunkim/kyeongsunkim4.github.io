@@ -1,9 +1,7 @@
-# Summary {.unnumbered}
+# Weekly meeting {.unnumbered}
 
-| Col1 | Col2 | Col3 |
-|------|------|------|
-| 1    | 2    | d    |
-| z    | 3    | f    |
-| d    | g    |      |
-
-: Table of summary
+| Task                      | Note | Link |
+|---------------------------|------|------|
+| Load/tower edit           |      |      |
+| Structural effect         |      |      |
+| Natural frequency changes |      |      |

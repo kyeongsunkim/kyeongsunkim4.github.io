@@ -3,7 +3,7 @@ project:
   output-dir: docs
   
 book:
-  title: "Research-Bookdown"
+  title: "Scour Project"
   author: "Kyeong Sun Kim"
   date: "2023. 3. 12."
   chapters:
