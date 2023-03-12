@@ -8,6 +8,7 @@ book:
   date: "2023. 3. 12."
   chapters:
     - index.qmd
+    - 01_practice_01.ipynb
     - intro.qmd
     - summary.qmd
     - references.qmd
