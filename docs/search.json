@@ -4,13 +4,20 @@
     "href": "index.html",
     "title": "Scour Project",
     "section": "",
-    "text": "Weekly meeting\n\n\n\nTask\nNote\nLink\n\n\n\n\nLoad/tower edit\n\n\n\n\nStructural effect\n\n\n\n\nNatural frequency changes"
+    "text": "Progress\n\n\n\nTask\nNote\nLink\n\n\n\n\nLoad/tower edit\n\n\n\n\nStructural effect\n\n\n\n\nNatural frequency changes"
   },
   {
-    "objectID": "01_practice_01.html",
-    "href": "01_practice_01.html",
-    "title": "Data Visualization",
-    "section": "",
-    "text": "%time print('hello world!')\n\nhello world!\nCPU times: total: 0 ns\nWall time: 0 ns"
+    "objectID": "01_practice_01.html#import-python-packages",
+    "href": "01_practice_01.html#import-python-packages",
+    "title": "1  Visualization of PLAXIS-SACS data",
+    "section": "1.1 Import python packages",
+    "text": "1.1 Import python packages\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib"
+  },
+  {
+    "objectID": "01_practice_01.html#read-data-from-.csv",
+    "href": "01_practice_01.html#read-data-from-.csv",
+    "title": "1  Visualization of PLAXIS-SACS data",
+    "section": "1.2 Read data from .csv",
+    "text": "1.2 Read data from .csv\n\n#filename = ''\n#df = pd.read_csv()\n\nhello world!"
   }
 ]
