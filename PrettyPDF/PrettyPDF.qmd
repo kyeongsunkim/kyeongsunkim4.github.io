@@ -1,0 +1,15 @@
+---
+title: "Report Name : MI-RNP-200 (Test procedure of the prototype model)"
+format:
+  PrettyPDF-pdf:
+    keep-tex: true
+---
+
+## Test Procedure
+
+### Step 1
+
+Release the throttle valve of the jacking system and release the pinion gear from restraint. (When the throttle valve is released, the flow will flow freely from port A to port B or from port B to port A, allowing the pinion gear to turn artificially without operating the power system.)
+
+![Illustration of first step](fig1.png)
+

@@ -4,20 +4,48 @@
     "href": "index.html",
     "title": "Scour Project",
     "section": "",
-    "text": "Progress\n\n\n\nTask\nNote\nLink\n\n\n\n\nLoad/tower edit\n\n\n\n\nStructural effect\n\n\n\n\nNatural frequency changes"
+    "text": "1 Design Parameters"
   },
   {
-    "objectID": "01_practice_01.html#import-python-packages",
-    "href": "01_practice_01.html#import-python-packages",
-    "title": "1  Visualization of PLAXIS-SACS data",
-    "section": "1.1 Import python packages",
-    "text": "1.1 Import python packages\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib"
+    "objectID": "index.html#design-cases",
+    "href": "index.html#design-cases",
+    "title": "Scour Project",
+    "section": "1.1 Design Cases",
+    "text": "1.1 Design Cases\n\n\n\nCase\nNote\n\n\n\n\n1\nHorizontal load = 1000 kN @ tower end\n\n\n2\nHorizontal load = 300 kN @ suction bucket\n\n\n3\nHorizontal load = 800 kN @ transition piece"
   },
   {
-    "objectID": "01_practice_01.html#read-data-from-.csv",
-    "href": "01_practice_01.html#read-data-from-.csv",
-    "title": "1  Visualization of PLAXIS-SACS data",
-    "section": "1.2 Read data from .csv",
-    "text": "1.2 Read data from .csv\n\n#filename = ''\n#df = pd.read_csv()\n\nhello world!"
+    "objectID": "index.html#wind-turbine-system",
+    "href": "index.html#wind-turbine-system",
+    "title": "Scour Project",
+    "section": "1.2 Wind Turbine System",
+    "text": "1.2 Wind Turbine System\n\n\n\n\n\n\n\n\nComponent\nParameter\nValue\n\n\nTurbine\nNacelle weight\n193 Ton\n\n\n\nLateral load\n1000 kN\n\n\nTower\nTower weight\nauto dead load (gravity)\n\n\n\nLength\n70 m\n\n\n\nDiameter\n4.5 m\n\n\n\nThickness\n22 mm\n\n\n\nYoung’s modulus\n210 GPa\n\n\n\nPoisson’s ratio\n0.30\n\n\nTransition piece (Main)\nLength\n\n\n\n\nDiameter\n4.5 m\n\n\n\nThickness\n35 mm\n\n\nTransition piece (Bracing)\nLength\n\n\n\n\nDiameter\n1.5 m\n\n\n\nThickness\n40 mm\n\n\n\nYoung’s modulus\n210 GPa\n\n\n\nPoisson’s ratio\n0.30\n\n\nSuction bucket\nLength\n6\n\n\n\nDiameter\n12\n\n\n\nThickness\n19 mm\n\n\n\nSpacing (for tripod)\n17.2 m\n\n\n\nYoung’s modulus\n210 GPa\n\n\n\nPoisson’s ratio\n0.30"
+  },
+  {
+    "objectID": "index.html#soil",
+    "href": "index.html#soil",
+    "title": "Scour Project",
+    "section": "1.3 Soil",
+    "text": "1.3 Soil\n\n\n\nConstitutive model\nParameter\nValue\n\n\n\n\nHSSM\nDensity\n17\n\n\n\nYoung’s modulus\n40E3\n\n\n\nPoisson’s ratio\n0.30\n\n\n\nShear modulus\n120E3\n\n\n\nStrain at 0.7\n0.00015\n\n\n\nCohesion\n1\n\n\n\nFriction angle\n40\n\n\n\nDilation angle\n10\n\n\n\nEarth pressure coeff. at rest\n0.5"
+  },
+  {
+    "objectID": "index.html#computation",
+    "href": "index.html#computation",
+    "title": "Scour Project",
+    "section": "1.4 Computation",
+    "text": "1.4 Computation\n\n\n\nControl settings\nParameter\nValue\n\n\n\n\nBoundary extent\nNx\n120\n\n\n\nNy\n120\n\n\n\nNz\n120\n\n\nMesh\nType\nFine\n\n\n\nElements\n117,667\n\n\n\nNodes\n175,012\n\n\n\nElement size\n0.4\n\n\n\nElement dimension\n3.642\n\n\n\nGlobal size factor\n1\n\n\n\nMin element size\n0.001"
+  },
+  {
+    "objectID": "01_practice_01.html#load-displacement-behavior",
+    "href": "01_practice_01.html#load-displacement-behavior",
+    "title": "2  Case1",
+    "section": "2.1 Load-displacement behavior",
+    "text": "2.1 Load-displacement behavior\n\n\nCode\nimport os, time, sys, math, random, json, requests, csv, subprocess\nimport pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport scienceplots\nimport multiprocessing as mp\nfrom scipy import stats\nfrom plotnine import *\nfrom plotnine.data import diamonds\nfrom IPython.display import display\nimport xlsxwriter\nimport xmltodict\nfrom plxscripting.easy import*\nimport plxscripting.easy\nfrom collections import defaultdict\nfrom collections import Mapping\nfrom bs4 import BeautifulSoup\nfrom lxml import objectify\n\n###########################################################################\n# data to plot\ndf = pd.read_csv(r'C:\\Users\\Admin\\Desktop\\pytools\\kyeongsunkim.github.io\\saved\\saved.csv')\nx = df[\"Ux\"].to_numpy()\ny = df[\"Fx\"].to_numpy()\nx2 = df[\"Uy\"].to_numpy()\ny2 = df[\"Fy\"].to_numpy()\nx3 = df[\"Uz\"].to_numpy()\ny3 = df[\"Fz\"].to_numpy()\n###########################################################################\n# figure\nplt.rc('font', family='serif')\nplt.rc('xtick', labelsize='x-small')\nplt.rc('ytick', labelsize='x-small')\nplt.style.use(['science', 'notebook', 'grid'])\nfig = plt.figure(figsize=(4, 3))\n###########################################################################\n# plot [1]\nax = fig.add_subplot(1, 1, 1)\n#ax.plot(x, y, color='k', ls='solid')\n#ax.plot(x2, y2, color='0.20', ls='dashed')\n#ax.plot(x3, y3, color='k', ls='dotted')\nax.plot(x, y, color='red', ls='solid')\nax.plot(x2, y2, color='blue', ls='solid')\nax.plot(x3, y3, color='green', ls='dotted')\n# labels\nfntsz = 14\nax.set_xlabel('Displacement [m]', fontsize=fntsz)\nax.set_ylabel('Reaction force [kN]', fontsize=fntsz)\nax.set_title('Load-displacement curve', fontsize=fntsz)\n\n# legend\nax.legend(['x-dir', 'y-dir', 'z-dir'], loc='upper left', fancybox=False, edgecolor='black', fontsize=fntsz-3)\n###########################################################################\nplt.show()"
+  },
+  {
+    "objectID": "01_practice_01.html#moment-rotation-behavior",
+    "href": "01_practice_01.html#moment-rotation-behavior",
+    "title": "2  Case1",
+    "section": "2.2 Moment-rotation behavior",
+    "text": "2.2 Moment-rotation behavior\n\n\nCode\nimport os, time, sys, math, random, json, requests, csv, subprocess\nimport pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport scienceplots\nimport multiprocessing as mp\nfrom scipy import stats\nfrom plotnine import *\nfrom plotnine.data import diamonds\nfrom IPython.display import display\nimport xlsxwriter\nimport xmltodict\nfrom plxscripting.easy import*\nimport plxscripting.easy\nfrom collections import defaultdict\nfrom collections import Mapping\nfrom bs4 import BeautifulSoup\nfrom lxml import objectify\n\n###########################################################################\n# data to plot\ndf = pd.read_csv(r'C:\\Users\\Admin\\Desktop\\pytools\\kyeongsunkim.github.io\\saved\\saved.csv')\nx = df[\"Rotx\"].to_numpy()\ny = df[\"Mx\"].to_numpy()\nx2 = df[\"Roty\"].to_numpy()\ny2 = df[\"My\"].to_numpy()\nx3 = df[\"Rotz\"].to_numpy()\ny3 = df[\"Mz\"].to_numpy()\n###########################################################################\n# figure\nplt.rc('font', family='serif')\nplt.rc('xtick', labelsize='x-small')\nplt.rc('ytick', labelsize='x-small')\nplt.style.use(['science', 'notebook', 'grid'])\nfig = plt.figure(figsize=(4, 3))\n###########################################################################\n# plot [1]\nax = fig.add_subplot(1, 1, 1)\n#ax.plot(x, y, color='k', ls='solid')\n#ax.plot(x2, y2, color='0.20', ls='dashed')\n#ax.plot(x3, y3, color='k', ls='dotted')\nax.plot(x, y, color='red', ls='solid')\nax.plot(x2, y2, color='blue', ls='solid')\nax.plot(x3, y3, color='green', ls='dotted')\n# labels\nfntsz = 14\nax.set_xlabel('Rotation [rad]', fontsize=fntsz)\nax.set_ylabel('Reaction moment [kNm]', fontsize=fntsz)\nax.set_title('Moment-rotation curve', fontsize=fntsz)\n\n# legend\nax.legend(['x-dir', 'y-dir', 'z-dir'], loc='upper left', fancybox=False, edgecolor='black', fontsize=fntsz-3)\n###########################################################################\nplt.show()"
   }
 ]

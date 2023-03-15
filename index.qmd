@@ -1,7 +1,66 @@
-# Progress {.unnumbered}
+# Design Parameters
 
-| Task                      | Note | Link |
-|---------------------------|------|------|
-| Load/tower edit           |      |      |
-| Structural effect         |      |      |
-| Natural frequency changes |      |      |
+## Design Cases
+
+| Case | Note                                         |
+|------|----------------------------------------------|
+| 1    | Horizontal load = 1000 kN \@ tower end       |
+| 2    | Horizontal load = 300 kN \@ suction bucket   |
+| 3    | Horizontal load = 800 kN \@ transition piece |
+
+## Wind Turbine System
+
+|                            |                      |                          |
+|----------------------------|--------------------|------------------------|
+| Component                  | Parameter            | Value                    |
+| Turbine                    | Nacelle weight       | 193 Ton                  |
+|                            | Lateral load         | 1000 kN                  |
+| Tower                      | Tower weight         | auto dead load (gravity) |
+|                            | Length               | 70 m                     |
+|                            | Diameter             | 4.5 m                    |
+|                            | Thickness            | 22 mm                    |
+|                            | Young's modulus      | 210 GPa                  |
+|                            | Poisson's ratio      | 0.30                     |
+| Transition piece (Main)    | Length               |                          |
+|                            | Diameter             | 4.5 m                    |
+|                            | Thickness            | 35 mm                    |
+| Transition piece (Bracing) | Length               |                          |
+|                            | Diameter             | 1.5 m                    |
+|                            | Thickness            | 40 mm                    |
+|                            | Young's modulus      | 210 GPa                  |
+|                            | Poisson's ratio      | 0.30                     |
+| Suction bucket             | Length               | 6                        |
+|                            | Diameter             | 12                       |
+|                            | Thickness            | 19 mm                    |
+|                            | Spacing (for tripod) | 17.2 m                   |
+|                            | Young's modulus      | 210 GPa                  |
+|                            | Poisson's ratio      | 0.30                     |
+
+## Soil
+
+| Constitutive model | Parameter                     | Value   |
+|--------------------|-------------------------------|---------|
+| HSSM               | Density                       | 17      |
+|                    | Young's modulus               | 40E3    |
+|                    | Poisson's ratio               | 0.30    |
+|                    | Shear modulus                 | 120E3   |
+|                    | Strain at 0.7                 | 0.00015 |
+|                    | Cohesion                      | 1       |
+|                    | Friction angle                | 40      |
+|                    | Dilation angle                | 10      |
+|                    | Earth pressure coeff. at rest | 0.5     |
+
+## Computation
+
+| Control settings | Parameter          | Value   |
+|------------------|--------------------|---------|
+| Boundary extent  | Nx                 | 120     |
+|                  | Ny                 | 120     |
+|                  | Nz                 | 120     |
+| Mesh             | Type               | Fine    |
+|                  | Elements           | 117,667 |
+|                  | Nodes              | 175,012 |
+|                  | Element size       | 0.4     |
+|                  | Element dimension  | 3.642   |
+|                  | Global size factor | 1       |
+|                  | Min element size   | 0.001   |

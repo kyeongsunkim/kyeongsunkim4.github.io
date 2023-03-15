@@ -96,12 +96,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Progress</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Design Parameters</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_practice_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Visualization of PLAXIS-SACS data</span></a>
+  <a href="./01_practice_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case1</span></a>
   </div>
 </li>
     </ul>
@@ -113,7 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#progress" id="toc-progress" class="nav-link active" data-scroll-target="#progress">Progress</a></li>
+  <li><a href="#design-parameters" id="toc-design-parameters" class="nav-link active" data-scroll-target="#design-parameters"><span class="toc-section-number">1</span>  Design Parameters</a>
+  <ul class="collapse">
+  <li><a href="#design-cases" id="toc-design-cases" class="nav-link" data-scroll-target="#design-cases"><span class="toc-section-number">1.1</span>  Design Cases</a></li>
+  <li><a href="#wind-turbine-system" id="toc-wind-turbine-system" class="nav-link" data-scroll-target="#wind-turbine-system"><span class="toc-section-number">1.2</span>  Wind Turbine System</a></li>
+  <li><a href="#soil" id="toc-soil" class="nav-link" data-scroll-target="#soil"><span class="toc-section-number">1.3</span>  Soil</a></li>
+  <li><a href="#computation" id="toc-computation" class="nav-link" data-scroll-target="#computation"><span class="toc-section-number">1.4</span>  Computation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,36 +155,285 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="progress" class="level1 unnumbered">
-<h1 class="unnumbered">Progress</h1>
+<section id="design-parameters" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Design Parameters</h1>
+<section id="design-cases" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="design-cases"><span class="header-section-number">1.1</span> Design Cases</h2>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Task</th>
+<th>Case</th>
 <th>Note</th>
-<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Load/tower edit</td>
-<td></td>
-<td></td>
+<td>1</td>
+<td>Horizontal load = 1000 kN @ tower end</td>
 </tr>
 <tr class="even">
-<td>Structural effect</td>
+<td>2</td>
+<td>Horizontal load = 300 kN @ suction bucket</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Horizontal load = 800 kN @ transition piece</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wind-turbine-system" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="wind-turbine-system"><span class="header-section-number">1.2</span> Wind Turbine System</h2>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 27%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Component</td>
+<td>Parameter</td>
+<td>Value</td>
+</tr>
+<tr class="even">
+<td>Turbine</td>
+<td>Nacelle weight</td>
+<td>193 Ton</td>
+</tr>
+<tr class="odd">
 <td></td>
+<td>Lateral load</td>
+<td>1000 kN</td>
+</tr>
+<tr class="even">
+<td>Tower</td>
+<td>Tower weight</td>
+<td>auto dead load (gravity)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Length</td>
+<td>70 m</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Diameter</td>
+<td>4.5 m</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Thickness</td>
+<td>22 mm</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Young’s modulus</td>
+<td>210 GPa</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Poisson’s ratio</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td>Transition piece (Main)</td>
+<td>Length</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Natural frequency changes</td>
 <td></td>
+<td>Diameter</td>
+<td>4.5 m</td>
+</tr>
+<tr class="even">
 <td></td>
+<td>Thickness</td>
+<td>35 mm</td>
+</tr>
+<tr class="odd">
+<td>Transition piece (Bracing)</td>
+<td>Length</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Diameter</td>
+<td>1.5 m</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Thickness</td>
+<td>40 mm</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Young’s modulus</td>
+<td>210 GPa</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Poisson’s ratio</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td>Suction bucket</td>
+<td>Length</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Diameter</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Thickness</td>
+<td>19 mm</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Spacing (for tripod)</td>
+<td>17.2 m</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Young’s modulus</td>
+<td>210 GPa</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Poisson’s ratio</td>
+<td>0.30</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="soil" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="soil"><span class="header-section-number">1.3</span> Soil</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Constitutive model</th>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HSSM</td>
+<td>Density</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Young’s modulus</td>
+<td>40E3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Poisson’s ratio</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Shear modulus</td>
+<td>120E3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Strain at 0.7</td>
+<td>0.00015</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Cohesion</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Friction angle</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Dilation angle</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Earth pressure coeff. at rest</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="computation" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="computation"><span class="header-section-number">1.4</span> Computation</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Control settings</th>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Boundary extent</td>
+<td>Nx</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ny</td>
+<td>120</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Nz</td>
+<td>120</td>
+</tr>
+<tr class="even">
+<td>Mesh</td>
+<td>Type</td>
+<td>Fine</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Elements</td>
+<td>117,667</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Nodes</td>
+<td>175,012</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Element size</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Element dimension</td>
+<td>3.642</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Global size factor</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Min element size</td>
+<td>0.001</td>
 </tr>
 </tbody>
 </table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -320,7 +575,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./01_practice_01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Visualization of PLAXIS-SACS data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
